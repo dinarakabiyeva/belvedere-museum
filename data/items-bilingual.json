@@ -1,0 +1,722 @@
+{
+  "rooms": {
+    "1": [
+      "messerschmidt-character-head",
+      "amerling-girl-straw-hat",
+      "makart-five-senses"
+    ],
+    "2": [
+      "waldmuller-children-grapes",
+      "schindler-coastal-landscape",
+      "romako-tegetthoff"
+    ],
+    "3": [
+      "monet-iris-garden",
+      "segantini-evil-mothers",
+      "blau-spring-prater"
+    ],
+    "4": [
+      "klimt-kiss",
+      "klimt-judith-i",
+      "kurzweil-yellow-dress"
+    ],
+    "5": [
+      "schiele-wally",
+      "schiele-four-trees",
+      "kokoschka-alma-mahler"
+    ],
+    "6": [
+      "ries-self-portrait",
+      "funke-still-life-flowers",
+      "luksch-makowsky-adolescence"
+    ]
+  },
+
+  "items": {
+
+    "messerschmidt-character-head": {
+      "id": "messerschmidt-character-head",
+      "title": "Character Head",
+      "creator": "Franz Xaver Messerschmidt",
+      "date": "c. 1770–1783",
+      "type": "Sculpture",
+      "format": "Lead-tin alloy",
+      "dimensions": "",
+      "inventoryNumber": "",
+      "room": 1,
+      "image": "images/messerschmidt-character-head.jpg",
+      "descriptions": {
+  "en": {
+    "short_intro_adult": "One of Messerschmidt’s famous 'Character Heads', this sculpture captures an exaggerated human expression, blending realism with psychological intensity.",
+    "medium_avg_adult": "Messerschmidt created a series of 'Character Heads' exploring extreme facial expressions. This sculpture combines precise anatomy with distortion, inviting reflection on emotion and identity.",
+    "long_adv_adult": "The 'Character Heads' reflect Enlightenment interest in physiognomy and the study of human emotion. This work demonstrates a departure from classical ideals, anticipating later expressionist tendencies in European art.",
+    "medium_intro_young": "This sculpture shows a funny and exaggerated face. The artist liked to study how people express emotions, making faces look strange or dramatic.",
+    "short_intro_young": "This sculpture shows a very funny and strange face, almost like someone making a silly expression.",
+    "medium_adv_adult": "The sculpture demonstrates a sophisticated exploration of physiognomy, where exaggerated expression becomes a tool for psychological inquiry.",
+    "long_intro_adult": "At first glance, this work appears humorous, yet it reveals a deeper investigation into the human face and its expressive possibilities."
+  },
+  "it": {
+    "short_intro_adult": "Una delle celebri 'Teste di carattere' di Messerschmidt, questa scultura rappresenta un’espressione umana esagerata e intensa.",
+    "medium_avg_adult": "Messerschmidt realizzò una serie di teste per studiare le espressioni umane. Questa opera unisce precisione anatomica e deformazione espressiva.",
+    "long_adv_adult": "Le 'Teste di carattere' riflettono l’interesse illuminista per la fisiognomica. L’opera anticipa aspetti dell’espressionismo moderno.",
+    "medium_intro_young": "Questa scultura mostra una faccia molto strana. L’artista voleva rappresentare emozioni forti attraverso espressioni esagerate.",
+    "short_intro_young": "Questa scultura mostra una faccia molto strana, come se qualcuno stesse facendo una smorfia.",
+    "medium_adv_adult": "La scultura rappresenta uno studio complesso della fisiognomica, in cui l’espressione diventa uno strumento di analisi psicologica.",
+    "long_intro_adult": "A prima vista l’opera può sembrare divertente, ma rivela un’indagine profonda sulle possibilità espressive del volto umano."
+  }
+}
+    },
+
+    "amerling-girl-straw-hat": {
+      "id": "amerling-girl-straw-hat",
+      "title": "Girl with Straw Hat",
+      "creator": "Friedrich von Amerling",
+      "date": "1835",
+      "type": "Painting",
+      "format": "Oil on canvas",
+      "dimensions": "",
+      "inventoryNumber": "",
+      "room": 1,
+      "image": "images/amerling-girl-straw-hat.jpg",
+      "descriptions": {
+  "en": {
+    "short_intro_adult": "A delicate portrait of a young girl, showing Amerling’s mastery of light and soft color.",
+    "medium_avg_adult": "Amerling’s portrait captures a serene moment, emphasizing light, texture, and the gentle expression of the sitter.",
+    "long_adv_adult": "This work exemplifies Biedermeier portraiture, balancing realism and idealization. Amerling’s use of light reflects broader European portrait traditions.",
+    "medium_intro_young": "This painting shows a girl wearing a straw hat. She looks calm and peaceful, like she is enjoying a sunny day.",
+    "short_intro_young": "This painting shows a girl wearing a big hat on a sunny day.",
+    "medium_adv_adult": "Amerling refines portraiture through delicate control of light and surface, emphasizing intimacy and bourgeois identity.",
+    "long_intro_adult": "This portrait presents a calm and gentle moment, focusing on light, softness, and the quiet presence of the sitter."
+  },
+  "it": {
+    "short_intro_adult": "Un delicato ritratto di una giovane ragazza, esempio della sensibilità pittorica di Amerling.",
+    "medium_avg_adult": "Amerling rappresenta una scena tranquilla, con attenzione alla luce e ai dettagli del volto.",
+    "long_adv_adult": "L’opera è un esempio tipico del Biedermeier, combinando realismo e idealizzazione nella ritrattistica.",
+    "medium_intro_young": "Questo dipinto mostra una ragazza con un cappello di paglia. Sembra tranquilla e serena.",
+    "short_intro_young": "Questo dipinto mostra una ragazza con un grande cappello in una giornata di sole.",
+    "medium_adv_adult": "Amerling perfeziona il ritratto attraverso un uso delicato della luce e della superficie pittorica.",
+    "long_intro_adult": "Il ritratto rappresenta un momento calmo e delicato, mettendo in evidenza la luce e la presenza della figura."
+  }
+}
+    },
+
+    "makart-five-senses": {
+      "id": "makart-five-senses",
+      "title": "The Five Senses",
+      "creator": "Hans Makart",
+      "date": "1872",
+      "type": "Painting",
+      "format": "Oil on canvas",
+      "dimensions": "",
+      "inventoryNumber": "",
+      "room": 1,
+      "image": "images/makart-five-senses.jpg",
+      "descriptions": {
+  "en": {
+    "short_intro_adult": "A rich allegorical composition representing the five human senses through symbolic figures.",
+    "medium_avg_adult": "Makart uses theatrical composition and vibrant color to depict the senses as symbolic characters.",
+    "long_adv_adult": "This work reflects Makart’s interest in Gesamtkunstwerk and visual spectacle, combining allegory with decorative richness.",
+    "medium_intro_young": "This painting shows five people, each representing a different sense like sight or smell.",
+    "short_intro_young": "This painting shows people acting like the five senses: seeing, hearing, and more.",
+    "medium_adv_adult": "Makart constructs a theatrical allegory, where each figure contributes to a symbolic orchestration of sensory experience.",
+    "long_intro_adult": "The painting transforms abstract ideas into human figures, inviting viewers to reflect on how we experience the world."
+  },
+  "it": {
+    "short_intro_adult": "Una composizione allegorica che rappresenta i cinque sensi attraverso figure simboliche.",
+    "medium_avg_adult": "Makart utilizza colori vivaci e una composizione teatrale per rappresentare i sensi.",
+    "long_adv_adult": "L’opera riflette il gusto decorativo e spettacolare dell’arte viennese del XIX secolo.",
+    "medium_intro_young": "Questo dipinto mostra cinque persone che rappresentano i sensi.",
+    "short_intro_young": "Questo dipinto mostra persone che rappresentano i cinque sensi.",
+    "medium_adv_adult": "Makart costruisce un’allegoria teatrale in cui ogni figura contribuisce a rappresentare l’esperienza sensoriale.",
+    "long_intro_adult": "L’opera trasforma idee astratte in figure umane, invitando a riflettere sui sensi."
+  }
+}
+    },
+
+    "waldmuller-children-grapes": {
+      "id": "waldmuller-children-grapes",
+      "title": "Children Eating Grapes and Melon",
+      "creator": "Ferdinand Georg Waldmüller",
+      "date": "1852",
+      "type": "Painting",
+      "format": "Oil on wood",
+      "dimensions": "",
+      "inventoryNumber": "",
+      "room": 2,
+      "image": "images/waldmuller-children-grapes.jpg",
+     "descriptions": {
+  "en": {
+    "short_intro_adult": "A warm scene of children enjoying fruit, highlighting everyday life and simplicity.",
+    "medium_avg_adult": "Waldmüller captures a natural moment of childhood, using light and detail to create realism.",
+    "long_adv_adult": "This work exemplifies Biedermeier realism, focusing on domestic life and the beauty of ordinary moments.",
+    "medium_intro_young": "Two children are eating fruit and having fun together in this painting.",
+    "short_intro_young": "Two children are eating fruit and having fun together.",
+    "medium_adv_adult": "Waldmüller’s attention to natural light and texture elevates a simple domestic scene into a refined study of realism.",
+    "long_intro_adult": "This scene captures a peaceful everyday moment, showing children sharing food in a warm and natural setting."
+  },
+  "it": {
+    "short_intro_adult": "Una scena familiare che rappresenta bambini mentre mangiano frutta.",
+    "medium_avg_adult": "Waldmüller raffigura un momento naturale dell’infanzia con grande realismo.",
+    "long_adv_adult": "L’opera è un esempio di realismo Biedermeier, centrato sulla vita quotidiana.",
+    "medium_intro_young": "Due bambini stanno mangiando frutta e si divertono insieme.",
+    "short_intro_young": "Due bambini stanno mangiando frutta insieme.",
+    "medium_adv_adult": "Waldmüller utilizza la luce naturale e i dettagli per trasformare una scena quotidiana in uno studio realistico.",
+    "long_intro_adult": "La scena mostra un momento semplice della vita quotidiana, pieno di calore e naturalezza."
+  }
+}
+    },
+
+    "schindler-coastal-landscape": {
+      "id": "schindler-coastal-landscape",
+      "title": "Coastal Landscape",
+      "creator": "Emil Jakob Schindler",
+      "date": "c. 1880",
+      "type": "Painting",
+      "format": "Oil on canvas",
+      "dimensions": "",
+      "inventoryNumber": "",
+      "room": 2,
+      "image": "images/schindler-coastal-landscape.jpg",
+      "descriptions": {
+  "en": {
+    "short_intro_adult": "A peaceful coastal landscape emphasizing atmosphere and light.",
+    "medium_avg_adult": "Schindler captures the changing light of the coast, focusing on mood rather than detail.",
+    "long_adv_adult": "The work reflects impressionist tendencies, privileging perception and atmosphere over precise representation.",
+    "medium_intro_young": "This painting shows the sea and the coast, with soft colors and calm light.",
+    "short_intro_young": "This painting shows the sea and a calm beach.",
+    "medium_adv_adult": "The artist privileges atmospheric perception, allowing light and color to define the landscape rather than strict detail.",
+    "long_intro_adult": "This landscape focuses on mood and light, creating a peaceful and reflective view of the coast."
+  },
+  "it": {
+    "short_intro_adult": "Un paesaggio costiero che enfatizza luce e atmosfera.",
+    "medium_avg_adult": "Schindler rappresenta la luce naturale e l’atmosfera del paesaggio marino.",
+    "long_adv_adult": "L’opera mostra influenze impressioniste, concentrandosi sulla percezione visiva.",
+    "medium_intro_young": "Questo dipinto mostra il mare con colori morbidi e tranquilli.",
+    "short_intro_young": "Questo dipinto mostra il mare e una spiaggia tranquilla.",
+    "medium_adv_adult": "L’artista privilegia l’atmosfera e la luce rispetto ai dettagli precisi.",
+    "long_intro_adult": "Il paesaggio trasmette una sensazione di calma, concentrandosi sulla luce e sul colore."
+  }
+}
+    },
+
+    "romako-tegetthoff": {
+      "id": "romako-tegetthoff",
+      "title": "Admiral Tegetthoff in the Battle of Lissa",
+      "creator": "Anton Romako",
+      "date": "1880–1882",
+      "type": "Painting",
+      "format": "Oil on canvas",
+      "dimensions": "",
+      "inventoryNumber": "",
+      "room": 2,
+      "image": "images/romako-tegetthoff.jpg",
+      "descriptions": {
+  "en": {
+    "short_intro_adult": "A dramatic depiction of Admiral Tegetthoff, emphasizing movement and tension.",
+    "medium_avg_adult": "Romako presents a dynamic and expressive portrait, breaking with traditional heroic representation.",
+    "long_adv_adult": "The painting challenges academic norms, using expressive distortion and bold composition to convey psychological intensity.",
+    "medium_intro_young": "This painting shows a strong man in action, like a hero in a dramatic moment.",
+    "short_intro_young": "This painting shows a strong leader in action.",
+    "medium_adv_adult": "Romako disrupts traditional heroic imagery by introducing tension and expressive instability.",
+    "long_intro_adult": "The painting shows a dramatic moment, focusing on movement and energy rather than calm heroism."
+  },
+  "it": {
+    "short_intro_adult": "Un ritratto dinamico dell’ammiraglio Tegetthoff.",
+    "medium_avg_adult": "Romako rappresenta il soggetto in modo espressivo e non tradizionale.",
+    "long_adv_adult": "L’opera rompe con l’accademismo, enfatizzando emozione e movimento.",
+    "medium_intro_young": "Questo dipinto mostra un uomo forte in un momento importante.",
+    "short_intro_young": "Questo dipinto mostra un leader forte in azione.",
+    "medium_adv_adult": "Romako rompe con la tradizione eroica introducendo tensione e instabilità.",
+    "long_intro_adult": "L’opera rappresenta un momento drammatico, enfatizzando movimento ed energia."
+  }
+}
+    },
+
+    "monet-iris-garden": {
+      "id": "monet-iris-garden",
+      "title": "Path Through the Iris Garden",
+      "creator": "Claude Monet",
+      "date": "1902",
+      "type": "Painting",
+      "format": "Oil on canvas",
+      "dimensions": "",
+      "inventoryNumber": "",
+      "room": 3,
+      "image": "images/monet-iris-garden.jpg",
+      "descriptions": {
+  "en": {
+    "short_intro_adult": "A vibrant garden scene by Monet, capturing light and color in a fleeting moment.",
+    "medium_avg_adult": "Monet’s painting focuses on the changing effects of light in a garden setting, using loose brushstrokes and vivid colors.",
+    "long_adv_adult": "This work exemplifies Impressionist practice, privileging optical perception over detail. Monet dissolves form into color and light, emphasizing the immediacy of visual experience.",
+    "medium_intro_young": "This painting shows a colorful garden full of flowers, painted with quick and soft brushstrokes.",
+    "short_intro_young": "This painting shows colorful flowers in a garden.",
+    "medium_adv_adult": "Monet dissolves form into light and color, emphasizing perception over structure.",
+    "long_intro_adult": "This garden scene captures a moment of light and color, showing nature in a lively and changing way."
+  },
+  "it": {
+    "short_intro_adult": "Un vivace giardino dipinto da Monet, ricco di luce e colore.",
+    "medium_avg_adult": "Monet rappresenta gli effetti della luce nel giardino con pennellate veloci e colori brillanti.",
+    "long_adv_adult": "L’opera è un esempio dell’Impressionismo, focalizzato sulla percezione visiva e sulla luce.",
+    "medium_intro_young": "Questo dipinto mostra un giardino pieno di fiori colorati.",
+    "short_intro_young": "Questo dipinto mostra un giardino pieno di fiori colorati.",
+    "medium_adv_adult": "Monet dissolve le forme nella luce e nel colore, privilegiando la percezione visiva.",
+    "long_intro_adult": "La scena cattura un momento naturale, mostrando il giardino in modo vivo e dinamico."
+  }
+}
+    },
+
+    "segantini-evil-mothers": {
+      "id": "segantini-evil-mothers",
+      "title": "The Evil Mothers",
+      "creator": "Giovanni Segantini",
+      "date": "1894",
+      "type": "Painting",
+      "format": "Oil on canvas",
+      "dimensions": "",
+      "inventoryNumber": "",
+      "room": 3,
+      "image": "images/segantini-evil-mothers.jpg",
+      "descriptions": {
+  "en": {
+    "short_intro_adult": "A haunting and symbolic scene exploring themes of guilt and punishment.",
+    "medium_avg_adult": "Segantini combines natural landscape with symbolic imagery, portraying figures trapped in a surreal environment.",
+    "long_adv_adult": "The painting reflects Symbolist concerns with morality and the human psyche. The frozen landscape becomes a metaphor for spiritual suffering and redemption.",
+    "medium_intro_young": "This painting looks mysterious and a bit scary, showing figures in a strange and cold place.",
+    "short_intro_young": "This painting looks a bit scary and mysterious.",
+    "medium_adv_adult": "The work merges symbolism and landscape to construct a moral and psychological narrative.",
+    "long_intro_adult": "The painting tells a symbolic story about emotions and consequences through a strange and dreamlike scene."
+  },
+  "it": {
+    "short_intro_adult": "Una scena simbolica e inquietante che esplora colpa e punizione.",
+    "medium_avg_adult": "Segantini unisce paesaggio e simbolismo in una visione surreale.",
+    "long_adv_adult": "L’opera appartiene al Simbolismo e rappresenta la sofferenza spirituale.",
+    "medium_intro_young": "Questo dipinto mostra una scena strana e un po’ spaventosa.",
+    "short_intro_young": "Questo dipinto è un po’ misterioso e inquietante.",
+    "medium_adv_adult": "L’opera unisce paesaggio e simbolismo per raccontare una storia morale.",
+    "long_intro_adult": "La scena rappresenta emozioni e conseguenze attraverso immagini simboliche e surreali."
+  }
+}
+    },
+
+    "blau-spring-prater": {
+      "id": "blau-spring-prater",
+      "title": "Spring at the Prater",
+      "creator": "Tina Blau",
+      "date": "1882",
+      "type": "Painting",
+      "format": "Oil on canvas",
+      "dimensions": "",
+      "inventoryNumber": "",
+      "room": 3,
+      "image": "images/blau-spring-prater.jpg",
+      "descriptions": {
+  "en": {
+    "short_intro_adult": "A lively depiction of spring in Vienna’s Prater park.",
+    "medium_avg_adult": "Blau captures a moment of leisure in nature, with attention to atmosphere and seasonal change.",
+    "long_adv_adult": "The painting reflects late 19th-century interest in urban leisure and natural light, bridging realism and impressionist tendencies.",
+    "medium_intro_young": "This painting shows people enjoying spring in a park with trees and fresh air.",
+    "short_intro_young": "People are walking and relaxing in a park.",
+    "medium_adv_adult": "The painting reflects modern urban leisure, blending natural observation with social life.",
+    "long_intro_adult": "This scene shows people enjoying springtime in a park, full of light and movement."
+  },
+  "it": {
+    "short_intro_adult": "Una scena primaverile nel Prater di Vienna.",
+    "medium_avg_adult": "Blau rappresenta la vita all’aperto e il cambiamento stagionale.",
+    "long_adv_adult": "L’opera mostra l’interesse per la vita urbana e la natura nel XIX secolo.",
+    "medium_intro_young": "Questo dipinto mostra persone in un parco in primavera.",
+    "short_intro_young": "Le persone stanno camminando e rilassandosi in un parco.",
+    "medium_adv_adult": "Il dipinto riflette la vita urbana e il tempo libero nella natura.",
+    "long_intro_adult": "La scena mostra la primavera in un parco, piena di luce e movimento."
+  }
+}
+    },
+
+    "klimt-kiss": {
+      "id": "klimt-kiss",
+      "title": "The Kiss",
+      "creator": "Gustav Klimt",
+      "date": "1907–1908",
+      "type": "Painting",
+      "format": "Oil and gold leaf on canvas",
+      "dimensions": "180 × 180 cm",
+      "inventoryNumber": "",
+      "room": 4,
+      "image": "images/klimt-kiss.jpg",
+      "descriptions": {
+  "en": {
+    "short_intro_adult": "Klimt’s iconic image of love, blending gold, pattern, and intimacy.",
+    "medium_avg_adult": "The painting shows a couple embracing, surrounded by decorative patterns and gold leaf, creating a sense of timeless intimacy.",
+    "long_adv_adult": "‘The Kiss’ exemplifies Klimt’s Golden Phase, combining Byzantine influences, symbolism, and ornamental abstraction to elevate the theme of love beyond the physical realm.",
+    "medium_intro_young": "This famous painting shows two people hugging each other in a golden, magical space.",
+    "short_intro_young": "Two people are hugging in a golden space.",
+    "medium_adv_adult": "Klimt merges ornament and symbolism to create a timeless representation of intimacy.",
+    "long_intro_adult": "This famous painting shows love and closeness through rich decoration and golden colors."
+  },
+  "it": {
+    "short_intro_adult": "Un’immagine iconica dell’amore, ricca di oro e decorazione.",
+    "medium_avg_adult": "Il dipinto mostra una coppia abbracciata in un ambiente dorato e decorativo.",
+    "long_adv_adult": "‘Il Bacio’ rappresenta la fase aurea di Klimt, unendo simbolismo e decorazione.",
+    "medium_intro_young": "Questo dipinto famoso mostra due persone che si abbracciano.",
+    "short_intro_young": "Due persone si abbracciano in uno spazio dorato.",
+    "medium_adv_adult": "Klimt unisce decorazione e simbolismo per rappresentare l’intimità.",
+    "long_intro_adult": "Il dipinto rappresenta l’amore attraverso colori dorati e motivi decorativi."  
+  }
+}
+    },
+
+    "klimt-judith-i": {
+      "id": "klimt-judith-i",
+      "title": "Judith I",
+      "creator": "Gustav Klimt",
+      "date": "1901",
+      "type": "Painting",
+      "format": "Oil on canvas",
+      "dimensions": "",
+      "inventoryNumber": "",
+      "room": 4,
+      "image": "images/klimt-judith-i.jpg",
+      "descriptions": {
+  "en": {
+    "short_intro_adult": "A powerful and sensual depiction of the biblical heroine Judith.",
+    "medium_avg_adult": "Klimt portrays Judith as both seductive and dangerous, challenging traditional representations of female virtue.",
+    "long_adv_adult": "The work reflects fin-de-siècle anxieties around gender and power. Judith becomes a symbol of both eroticism and violence within Viennese modernism.",
+    "medium_intro_young": "This painting shows a strong woman who looks confident and powerful.",
+    "short_intro_young": "This painting shows a strong and confident woman.",
+    "medium_adv_adult": "Judith becomes a complex figure of power and seduction within Viennese modernism.",
+    "long_intro_adult": "The painting shows a powerful woman, combining beauty with strength and danger."
+  },
+  "it": {
+    "short_intro_adult": "Un ritratto sensuale e potente della figura biblica di Giuditta.",
+    "medium_avg_adult": "Klimt rappresenta Giuditta come una figura seducente e forte.",
+    "long_adv_adult": "L’opera riflette i temi della modernità viennese, tra erotismo e potere.",
+    "medium_intro_young": "Questo dipinto mostra una donna forte e sicura di sé.",
+    "short_intro_young": "Questo dipinto mostra una donna forte e sicura.",
+    "medium_adv_adult": "Giuditta diventa una figura complessa di potere e seduzione.",
+    "long_intro_adult": "L’opera rappresenta una donna potente, tra bellezza e pericolo."
+  }
+}
+    },
+
+    "kurzweil-yellow-dress": {
+      "id": "kurzweil-yellow-dress",
+      "title": "Woman in a Yellow Dress",
+      "creator": "Max Kurzweil",
+      "date": "1899",
+      "type": "Painting",
+      "format": "Oil on canvas",
+      "dimensions": "",
+      "inventoryNumber": "",
+      "room": 4,
+      "image": "images/kurzweil-yellow-dress.jpg",
+      "descriptions": {
+  "en": {
+    "short_intro_adult": "A refined portrait highlighting elegance and modern femininity.",
+    "medium_avg_adult": "Kurzweil captures a moment of introspection, emphasizing the sitter’s posture and expression.",
+    "long_adv_adult": "The work reflects Viennese Secession ideals, focusing on psychological depth and modern identity rather than mere appearance.",
+    "medium_intro_young": "This painting shows a woman in a bright yellow dress, sitting quietly and thinking.",
+    "short_intro_young": "A woman in a bright yellow dress is sitting quietly.",
+    "medium_adv_adult": "Kurzweil emphasizes psychological presence through subtle posture and expression.",
+    "long_intro_adult": "This portrait shows a quiet and thoughtful moment, focusing on mood and personality."
+  },
+  "it": {
+    "short_intro_adult": "Un ritratto elegante che rappresenta la femminilità moderna.",
+    "medium_avg_adult": "Kurzweil mostra una figura pensierosa e introspettiva.",
+    "long_adv_adult": "L’opera riflette gli ideali della Secessione Viennese.",
+    "medium_intro_young": "Questo dipinto mostra una donna con un vestito giallo.",
+    "short_intro_young": "Una donna con un vestito giallo è seduta in silenzio.",
+    "medium_adv_adult": "Kurzweil mette in evidenza la presenza psicologica della figura.",
+    "long_intro_adult": "Il ritratto mostra un momento di riflessione e introspezione."
+  }
+}
+    },
+
+    "schiele-wally": {
+      "id": "schiele-wally",
+      "title": "Portrait of Wally Neuzil",
+      "creator": "Egon Schiele",
+      "date": "1912",
+      "type": "Painting",
+      "format": "Oil on panel",
+      "dimensions": "",
+      "inventoryNumber": "",
+      "room": 5,
+      "image": "images/schiele-wally.jpg",
+      "descriptions": {
+  "en": {
+    "short_intro_adult": "A striking portrait of Wally Neuzil, marked by intensity, fragility, and emotional presence.",
+    "medium_avg_adult": "Schiele portrays Wally with sharp contours and expressive color, emphasizing psychological tension rather than ideal beauty.",
+    "long_adv_adult": "This portrait reflects Schiele’s radical break with conventional portraiture. The sitter’s direct gaze, angular forms, and exposed emotional vulnerability exemplify Viennese Expressionism’s focus on the inner self.",
+    "medium_intro_young": "This painting shows a woman looking serious and thoughtful. The artist used strong lines and colors to show emotion.",
+    "short_intro_young": "This painting shows a woman with a serious face.",
+    "medium_adv_adult": "Schiele intensifies emotional presence through distortion and line.",
+    "long_intro_adult": "This portrait shows strong emotion and personality through bold lines and colors."
+  },
+  "it": {
+    "short_intro_adult": "Un intenso ritratto di Wally Neuzil, pieno di fragilità ed espressione.",
+    "medium_avg_adult": "Schiele rappresenta Wally con linee nette e colori espressivi, mettendo in evidenza la tensione psicologica.",
+    "long_adv_adult": "Il ritratto mostra la rottura di Schiele con la pittura tradizionale, concentrandosi sull’interiorità e sulla vulnerabilità emotiva.",
+    "medium_intro_young": "Questo dipinto mostra una donna con uno sguardo serio e intenso.",
+    "short_intro_young": "Questo dipinto mostra una donna con un’espressione seria.",
+    "medium_adv_adult": "Schiele intensifica l’emozione attraverso linee forti e distorsioni.",
+    "long_intro_adult": "Il ritratto esprime forte intensità emotiva e personalità."
+  }
+}
+    },
+
+    "schiele-four-trees": {
+      "id": "schiele-four-trees",
+      "title": "Four Trees",
+      "creator": "Egon Schiele",
+      "date": "1917",
+      "type": "Painting",
+      "format": "Oil on canvas",
+      "dimensions": "",
+      "inventoryNumber": "",
+      "room": 5,
+      "image": "images/schiele-four-trees.jpg",
+      "descriptions": {
+  "en": {
+    "short_intro_adult": "A poetic landscape in which four trees stand against a glowing sky.",
+    "medium_avg_adult": "Schiele transforms a simple landscape into an emotional image, using bold outlines and unusual color contrasts.",
+    "long_adv_adult": "Although quieter than his portraits, this landscape retains Schiele’s expressive tension. The trees appear almost human in their isolation, turning nature into a vehicle for emotional symbolism.",
+    "medium_intro_young": "This painting shows four trees at sunset. The colors make the scene feel calm but also a little mysterious.",
+    "short_intro_young": "Four trees stand under a colorful sky.",
+    "medium_adv_adult": "The landscape becomes symbolic, reflecting emotional isolation.",
+    "long_intro_adult": "This scene shows nature in a quiet but emotional way, with strong colors and shapes."
+  },
+  "it": {
+    "short_intro_adult": "Un paesaggio poetico con quattro alberi contro un cielo luminoso.",
+    "medium_avg_adult": "Schiele trasforma un paesaggio semplice in un’immagine emotiva attraverso contorni forti e colori insoliti.",
+    "long_adv_adult": "Anche in questo paesaggio Schiele mantiene una forte tensione espressiva, rendendo la natura carica di significato simbolico.",
+    "medium_intro_young": "Questo dipinto mostra quattro alberi al tramonto, con colori intensi e un’atmosfera un po’ misteriosa.",
+    "short_intro_young": "Quattro alberi sotto un cielo colorato.",
+    "medium_adv_adult": "Il paesaggio assume un significato simbolico ed emotivo.",
+    "long_intro_adult": "La scena naturale diventa un’immagine carica di emozione."
+  }
+}
+    },
+
+    "kokoschka-alma-mahler": {
+      "id": "kokoschka-alma-mahler",
+      "title": "Portrait of Alma Mahler",
+      "creator": "Oskar Kokoschka",
+      "date": "1912–1913",
+      "type": "Painting",
+      "format": "Oil on canvas",
+      "dimensions": "",
+      "inventoryNumber": "",
+      "room": 5,
+      "image": "images/kokoschka-alma-mahler.jpg",
+      "descriptions": {
+  "en": {
+    "short_intro_adult": "A turbulent portrait of love and emotional instability, centered on Alma Mahler.",
+    "medium_avg_adult": "Kokoschka’s painting conveys intense feeling through restless brushwork and dramatic composition.",
+    "long_adv_adult": "The work embodies Expressionism’s emotional force, turning portraiture into a record of psychological conflict. Alma Mahler appears not simply as a sitter, but as a figure within a deeply personal emotional drama.",
+    "medium_intro_young": "This painting feels full of strong emotions. The artist used fast brushstrokes to show intensity and movement.",
+    "short_intro_young": "This painting feels full of emotion and movement.",
+    "medium_adv_adult": "The work transforms portraiture into a record of emotional intensity.",
+    "long_intro_adult": "This painting shows a relationship full of strong feelings and tension."
+  },
+  "it": {
+    "short_intro_adult": "Un ritratto carico di tensione emotiva, legato alla figura di Alma Mahler.",
+    "medium_avg_adult": "Kokoschka usa pennellate agitate e una composizione intensa per esprimere emozioni forti.",
+    "long_adv_adult": "L’opera trasforma il ritratto in una scena di conflitto psicologico, tipica dell’Espressionismo.",
+    "medium_intro_young": "Questo dipinto trasmette emozioni molto forti attraverso colori e movimenti.",
+    "short_intro_young": "Questo dipinto è pieno di emozioni e movimento.",
+    "medium_adv_adult": "L’opera trasforma il ritratto in una scena di intensa emozione.",
+    "long_intro_adult": "Il dipinto rappresenta una relazione carica di tensione emotiva."
+  }
+}
+    },
+    
+    "ries-self-portrait": {
+  "id": "ries-self-portrait",
+  "title": "Self-Portrait",
+  "creator": "Teresa Feodorowna Ries",
+  "date": "c. 1900–1910",
+  "type": "Sculpture",
+  "format": "Marble",
+  "dimensions": "",
+  "inventoryNumber": "",
+  "room": 6,
+  "image": "images/ries-self-portrait.jpg",
+  "descriptions": {
+  "en": {
+    "short_intro_adult": "A self-portrait that presents the artist with dignity and introspection.",
+    "medium_avg_adult": "The artist studies her own image with careful attention, balancing realism and personal expression.",
+    "long_adv_adult": "This self-portrait is significant not only as an image of identity, but also as a statement of artistic presence by a woman working within a largely male-dominated art world.",
+    "medium_intro_young": "This is a picture the artist made of herself. She looks calm and serious, as if thinking carefully.",
+    "short_intro_young": "This is a painting of the artist herself.",
+    "medium_adv_adult": "The self-portrait asserts identity and presence within artistic tradition.",
+    "long_intro_adult": "The artist shows herself carefully, expressing both identity and personality."
+  },
+  "it": {
+    "short_intro_adult": "Un autoritratto che mostra l’artista con dignità e introspezione.",
+    "medium_avg_adult": "L’artista osserva la propria immagine con attenzione, unendo realismo ed espressione personale.",
+    "long_adv_adult": "L’opera è importante anche come affermazione della presenza artistica femminile in un contesto storicamente dominato dagli uomini.",
+    "medium_intro_young": "Questo dipinto è un autoritratto: l’artista ha rappresentato se stessa.",
+    "short_intro_young": "Questo è un autoritratto dell’artista.",
+    "medium_adv_adult": "L’autoritratto afferma l’identità e la presenza dell’artista.",
+    "long_intro_adult": "L’artista rappresenta se stessa con attenzione e consapevolezza."
+  }
+}
+ },
+
+    "funke-still-life-flowers": {
+      "id": "funke-still-life-flowers",
+      "title": "Still Life with Flowers",
+      "creator": "Helene Funke",
+      "date": "c. 1920",
+      "type": "Painting",
+      "format": "Oil on canvas",
+      "dimensions": "",
+      "inventoryNumber": "",
+      "room": 6,
+      "image": "images/funke-still-life-flowers.jpg",
+      "descriptions": {
+  "en": {
+    "short_intro_adult": "A delicate still life of flowers, combining beauty, balance, and observation.",
+    "medium_avg_adult": "The painting celebrates color and form through a carefully arranged bouquet, inviting slow and attentive looking.",
+    "long_adv_adult": "This still life reflects the tradition of floral painting while also emphasizing modern sensitivity to surface, color harmony, and quiet intimacy.",
+    "medium_intro_young": "This painting shows flowers arranged in a beautiful way, with soft colors and careful details.",
+    "short_intro_young": "This painting shows a beautiful group of flowers.",
+    "medium_adv_adult": "The composition emphasizes harmony of color and form.",
+    "long_intro_adult": "This still life shows flowers arranged carefully, focusing on beauty and balance."
+  },
+  "it": {
+    "short_intro_adult": "Una delicata natura morta floreale, elegante e armoniosa.",
+    "medium_avg_adult": "Il dipinto valorizza forme e colori attraverso una composizione equilibrata.",
+    "long_adv_adult": "L’opera appartiene alla tradizione della natura morta, ma con una sensibilità moderna per il colore e la superficie pittorica.",
+    "medium_intro_young": "Questo dipinto mostra un mazzo di fiori dipinto con molta attenzione.",
+    "short_intro_young": "Questo dipinto mostra dei fiori molto belli.",
+    "medium_adv_adult": "La composizione enfatizza armonia e colore.",
+    "long_intro_adult": "La natura morta mostra equilibrio e attenzione ai dettagli."
+  }
+}
+    },
+
+    "luksch-makowsky-adolescence": {
+  "id": "luksch-makowsky-adolescence",
+  "title": "Adolescence",
+  "creator": "Elena Luksch-Makowsky",
+  "date": "c. 1900",
+  "type": "Relief / Sculpture",
+  "format": "Bronze",
+  "dimensions": "",
+  "inventoryNumber": "",
+  "room": 6,
+  "image": "images/luksch-makowsky-adolescence.jpg",
+  "descriptions": {
+  "en": {
+    "short_intro_adult": "A symbolic work reflecting youth, transition, and inner development.",
+    "medium_avg_adult": "The figure represents adolescence as a moment of change, uncertainty, and emerging identity.",
+    "long_adv_adult": "This work explores adolescence not simply as an age, but as a symbolic state between innocence and maturity. Its quiet introspection aligns with broader modernist concerns about identity and transformation.",
+    "medium_intro_young": "This artwork is about growing up. It shows how adolescence can feel uncertain, thoughtful, and full of change.",
+    "short_intro_young": "This artwork is about growing up and change.",
+    "medium_adv_adult": "The work explores adolescence as a symbolic state of transition.",
+    "long_intro_adult": "The artwork reflects the idea of becoming an adult, full of change and uncertainty."
+  },
+  "it": {
+    "short_intro_adult": "Un’opera simbolica che riflette la giovinezza e il cambiamento.",
+    "medium_avg_adult": "La figura rappresenta l’adolescenza come momento di trasformazione e ricerca di identità.",
+    "long_adv_adult": "L’opera interpreta l’adolescenza come uno stato simbolico tra innocenza e maturità, in linea con le riflessioni moderniste sull’identità.",
+    "medium_intro_young": "Quest’opera parla della crescita e dei cambiamenti dell’adolescenza.",
+    "short_intro_young": "Quest’opera parla della crescita e del cambiamento.",
+    "medium_adv_adult": "L’opera esplora l’adolescenza come fase di trasformazione.",
+    "long_intro_adult": "Il lavoro riflette il passaggio dall’infanzia all’età adulta."
+  }
+}
+}
+  },
+
+  "narratives": {
+    "timeline": [
+      "messerschmidt-character-head",
+      "amerling-girl-straw-hat",
+      "waldmuller-children-grapes",
+      "schindler-coastal-landscape",
+      "makart-five-senses",
+      "blau-spring-prater",
+      "romako-tegetthoff",
+      "segantini-evil-mothers",
+      "kurzweil-yellow-dress",
+      "klimt-judith-i",
+      "monet-iris-garden",
+      "klimt-kiss",
+      "koller-women-window",
+      "boeckl-mela-koehler",
+      "schiele-wally",
+      "kokoschka-alma-mahler",
+      "schiele-four-trees",
+      "funke-still-life-flowers"
+    ],
+
+    "emotion_expression": [
+      "messerschmidt-character-head",
+      "romako-tegetthoff",
+      "segantini-evil-mothers",
+      "klimt-judith-i",
+      "klimt-kiss",
+      "kurzweil-yellow-dress",
+      "kokoschka-alma-mahler",
+      "schiele-wally",
+      "schiele-four-trees"
+    ],
+
+    "links": {
+      "timeline": {
+        "messerschmidt-character-head": { "prev": null, "next": "amerling-girl-straw-hat" },
+        "amerling-girl-straw-hat":     { "prev": "messerschmidt-character-head", "next": "waldmuller-children-grapes" },
+        "waldmuller-children-grapes":  { "prev": "amerling-girl-straw-hat", "next": "schindler-coastal-landscape" },
+        "schindler-coastal-landscape": { "prev": "waldmuller-children-grapes", "next": "makart-five-senses" },
+        "makart-five-senses":          { "prev": "schindler-coastal-landscape", "next": "blau-spring-prater" },
+        "blau-spring-prater":          { "prev": "makart-five-senses", "next": "romako-tegetthoff" },
+        "romako-tegetthoff":           { "prev": "blau-spring-prater", "next": "segantini-evil-mothers" },
+        "segantini-evil-mothers":      { "prev": "romako-tegetthoff", "next": "kurzweil-yellow-dress" },
+        "kurzweil-yellow-dress":       { "prev": "segantini-evil-mothers", "next": "klimt-judith-i" },
+        "klimt-judith-i":             { "prev": "kurzweil-yellow-dress", "next": "monet-iris-garden" },
+        "monet-iris-garden":          { "prev": "klimt-judith-i", "next": "klimt-kiss" },
+        "klimt-kiss":                 { "prev": "monet-iris-garden", "next": "koller-women-window" },
+        "koller-women-window":        { "prev": "klimt-kiss", "next": "boeckl-mela-koehler" },
+        "boeckl-mela-koehler":        { "prev": "koller-women-window", "next": "schiele-wally" },
+        "schiele-wally":              { "prev": "boeckl-mela-koehler", "next": "kokoschka-alma-mahler" },
+        "kokoschka-alma-mahler":      { "prev": "schiele-wally", "next": "schiele-four-trees" },
+        "schiele-four-trees":         { "prev": "kokoschka-alma-mahler", "next": "funke-still-life-flowers" },
+        "funke-still-life-flowers":   { "prev": "schiele-four-trees", "next": null }
+      },
+
+      "emotion_expression": {
+        "messerschmidt-character-head": { "prev": null, "next": "romako-tegetthoff" },
+        "romako-tegetthoff":            { "prev": "messerschmidt-character-head", "next": "segantini-evil-mothers" },
+        "segantini-evil-mothers":       { "prev": "romako-tegetthoff", "next": "klimt-judith-i" },
+        "klimt-judith-i":               { "prev": "segantini-evil-mothers", "next": "klimt-kiss" },
+        "klimt-kiss":                   { "prev": "klimt-judith-i", "next": "kurzweil-yellow-dress" },
+        "kurzweil-yellow-dress":        { "prev": "klimt-kiss", "next": "kokoschka-alma-mahler" },
+        "kokoschka-alma-mahler":        { "prev": "kurzweil-yellow-dress", "next": "schiele-wally" },
+        "schiele-wally":                { "prev": "kokoschka-alma-mahler", "next": "schiele-four-trees" },
+        "schiele-four-trees":           { "prev": "schiele-wally", "next": null }
+      }
+    },
+
+    "index": {
+      "messerschmidt-character-head": ["timeline", "emotion_expression"],
+      "amerling-girl-straw-hat": ["timeline"],
+      "makart-five-senses": ["timeline"],
+      "waldmuller-children-grapes": ["timeline"],
+      "schindler-coastal-landscape": ["timeline"],
+      "romako-tegetthoff": ["timeline", "emotion_expression"],
+      "monet-iris-garden": ["timeline"],
+      "segantini-evil-mothers": ["timeline", "emotion_expression"],
+      "blau-spring-prater": ["timeline"],
+      "klimt-kiss": ["timeline", "emotion_expression"],
+      "klimt-judith-i": ["timeline", "emotion_expression"],
+      "kurzweil-yellow-dress": ["timeline", "emotion_expression"],
+      "koller-women-window": ["timeline"],
+      "boeckl-mela-koehler": ["timeline"],
+      "schiele-wally": ["timeline", "emotion_expression"],
+      "kokoschka-alma-mahler": ["timeline", "emotion_expression"],
+      "schiele-four-trees": ["timeline", "emotion_expression"],
+      "funke-still-life-flowers": ["timeline"]
+    }
+  }
+}

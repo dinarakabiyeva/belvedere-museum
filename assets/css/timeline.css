@@ -1,0 +1,132 @@
+/* ----------------------------------
+   GLOBAL TIMELINE LAYOUT
+---------------------------------- */
+.timeline-header {
+    text-align: center;
+    margin: 80px auto 40px;
+    max-width: 800px;
+}
+
+.timeline-header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.timeline {
+    position: relative;
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto 100px;
+    padding-left: 20px;
+}
+
+/* vertical line */
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 6px;
+    height: 100%;
+    transform: translateX(-50%);
+    background: var(--timeline-line);
+}
+
+/* Timeline item container */
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 20px;
+}
+
+/* hidden state for reveal animation */
+.timeline-item.hidden { opacity: 0; transform: translateY(18px); transition: opacity 600ms ease, transform 600ms ease; }
+.timeline-item.in-view { opacity: 1; transform: translateY(0); }
+
+/* Alternating L/R layout */
+.timeline-item.left { left: 0; text-align: right; }
+.timeline-item.right { left: 50%; }
+
+/* The card */
+.timeline-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    transition: transform .2s;
+}
+
+.timeline-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Images */
+.timeline-img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--timeline-line);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 20px;
+    background: #fff;
+}
+
+/* Button */
+.timeline-card .btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background: var(--btn-bg);
+    color: var(--btn-text);
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.timeline-card .btn:hover {
+    background: var(--btn-bg-hover);
+}
+
+/* ----------------------------------
+   CLASSIC (LIGHT) THEME VARIABLES
+---------------------------------- */
+body.light {
+    --timeline-line: #c6b48f;
+    --card-bg: #faf5ee;
+    --card-border: #e2d8c5;
+    --card-shadow: 4px 4px 12px rgba(120, 100, 70, 0.2);
+    --btn-bg: #c5b49a;
+    --btn-bg-hover: #a89572;
+    --btn-text: #000;
+}
+
+/* ----------------------------------
+   SECESSION (DARK) THEME VARIABLES
+---------------------------------- */
+body.dark {
+    --timeline-line: #d0a33d;
+    --card-bg: #1b1b1b;
+    --card-border: #3a3a3a;
+    --card-shadow: 4px 4px 12px rgba(0, 0, 0, 0.5);
+    --btn-bg: #d0a33d;
+    --btn-bg-hover: #f5c652;
+    --btn-text: #000;
+}
+
+body.dark .timeline-header h1,
+body.dark .timeline-header p {
+    color: #f2e7c9;
+}
+
+/* RESPONSIVE */
+@media (max-width: 830px) {
+    .timeline::before { left: 20px; }
+    .timeline-item {
+        width: 100%;
+        margin-left: 40px;
+    }
+    .timeline-item.left { text-align: left; }
+}

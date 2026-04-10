@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Artwork Viewer – Belvedere Virtual Exhibition</title>
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link id="theme-style" rel="stylesheet" href="">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <style>
+    /* ---- Narrative banner ---- */
+    .narrative-banner {
+      display: none;
+      background: rgba(0,0,0,0.04);
+      border-left: 3px solid currentColor;
+      padding: 10px 16px;
+      margin-bottom: 18px;
+      border-radius: 0 4px 4px 0;
+      font-size: 0.88rem;
+    }
+    .narrative-banner .narrative-label {
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      opacity: 0.7; display: block; margin-bottom: 3px;
+    }
+    .narrative-banner #narrativeName { font-weight: 600; font-size: 0.95rem; }
+    .narrative-banner #narrativeIntro {
+      display: none; font-style: italic; margin-top: 6px;
+      opacity: 0.8; font-size: 0.88rem; line-height: 1.5;
+    }
+    .narrative-progress-row { display: flex; align-items: center; gap: 10px; margin-top: 6px; }
+    #narrativeProgress { font-size: 0.8rem; opacity: 0.65; font-variant-numeric: tabular-nums; }
+    .progress-bar-track { flex: 1; height: 3px; background: rgba(0,0,0,0.1); border-radius: 2px; overflow: hidden; }
+    .progress-bar-fill { height: 100%; background: currentColor; opacity: 0.5; border-radius: 2px; transition: width 0.3s ease; }
+
+    /* ---- Keyboard hint ---- */
+    .keyboard-hint { font-size: 0.75rem; opacity: 0.45; margin-top: 8px; letter-spacing: 0.03em; }
+
+    /* ---- Description pill buttons ---- */
+    .desc-mode-group { display: flex; flex-direction: column; gap: 10px; margin: 16px 0; }
+    .desc-mode-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .desc-mode-label { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.65; min-width: 90px; }
+    .desc-btn-group { display: flex; gap: 4px; }
+    .desc-btn { padding: 5px 12px; font-size: 0.82rem; border: 1px solid rgba(0,0,0,0.15); background: transparent; border-radius: 20px; cursor: pointer; color: inherit; opacity: 0.7; transition: all 0.15s; letter-spacing: 0.02em; }
+    .desc-btn:hover { opacity: 1; }
+    .desc-btn.active { opacity: 1; border-color: currentColor; background: rgba(0,0,0,0.06); font-weight: 600; }
+
+    /* ---- No-narrative notice ---- */
+    .no-narrative-notice { font-size: 0.82rem; opacity: 0.5; font-style: italic; margin-top: 6px; }
+
+    .debug-version {
+      margin-top: 10px;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.45;
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <button id="nav-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+  <a href="index.html" class="logo">
+    <img class="site-avatar" src="assets/images/logo.svg" alt="Belvedere Museum logo">
+    <span class="sr-only">Belvedere Museum</span>
+  </a>
+  <nav id="main-nav" class="navbar">
+    <a href="index.html">Home</a>
+    <a href="map.html">Exhibition Map</a>
+    <a href="timeline.html">Timeline</a>
+    <a href="narratives.html">Narratives</a>
+    <a href="about.html">About</a>
+    <a href="documentation.html">Documentation</a>
+    <a href="disclaimer.html">Disclaimer</a>
+  </nav>
+  <button id="theme-toggle">Switch Theme</button>
+</header>
+
+
+<main class="item-layout">
+
+  <!-- Left: ARTWORK IMAGE -->
+  <section class="item-image-wrapper">
+    <img id="artImage" class="item-image" src="" alt="">
+  </section>
+
+  <!-- Right: METADATA + DESCRIPTION -->
+  <section class="item-info">
+
+    <!-- Narrative Banner -->
+    <div id="narrativeBanner" class="narrative-banner" aria-live="polite">
+      <span class="narrative-label">Currently following</span>
+      <span id="narrativeName"></span>
+      <div class="narrative-progress-row">
+        <span id="narrativeProgress"></span>
+        <div class="progress-bar-track">
+          <div class="progress-bar-fill" id="progressBarFill" style="width:0%"></div>
+        </div>
+      </div>
+      <p id="narrativeIntro"></p>
+    </div>
+
+    <h1 id="title"></h1>
+
+    <p><strong>Creator:</strong> <span id="creator"></span></p>
+    <p><strong>Date:</strong> <span id="date"></span></p>
+    <p><strong>Type:</strong> <span id="type"></span></p>
+    <p><strong>Format:</strong> <span id="format"></span></p>
+    <p><strong>Room:</strong> <span id="room"></span></p>
+
+    <br>
+
+    <!-- Description Mode Controls -->
+    <div class="desc-mode-group" role="group" aria-label="Description mode">
+      <div class="desc-mode-row">
+        <span class="desc-mode-label">Language</span>
+        <div class="desc-btn-group" role="group" aria-label="Language selection">
+          <button class="desc-btn active" data-axis="language" data-value="en">EN</button>
+          <button class="desc-btn" data-axis="language" data-value="it">IT</button>
+        </div>
+      </div>
+      <div class="desc-mode-row">
+        <span class="desc-mode-label">Length</span>
+        <div class="desc-btn-group" role="group" aria-label="Description length">
+          <button class="desc-btn active" data-axis="length" data-value="Short">Brief</button>
+          <button class="desc-btn" data-axis="length" data-value="Medium">Standard</button>
+          <button class="desc-btn" data-axis="length" data-value="Long">Full</button>
+        </div>
+      </div>
+      <div class="desc-mode-row">
+        <span class="desc-mode-label">Level</span>
+        <div class="desc-btn-group" role="group" aria-label="Description level">
+          <button class="desc-btn active" data-axis="competence" data-value="Introductory">Intro</button>
+          <button class="desc-btn" data-axis="competence" data-value="Average">General</button>
+          <button class="desc-btn" data-axis="competence" data-value="Advanced">Scholar</button>
+        </div>
+      </div>
+      <div class="desc-mode-row">
+        <span class="desc-mode-label">Tone</span>
+        <div class="desc-btn-group" role="group" aria-label="Description tone">
+          <button class="desc-btn active" data-axis="tone" data-value="Adult">Adult</button>
+          <button class="desc-btn" data-axis="tone" data-value="Young">Young</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hidden selects for item.js compatibility -->
+    <select id="languageSelect" style="display:none">
+      <option value="en">en</option>
+      <option value="it">it</option>
+    </select>
+    <select id="lengthSelect" style="display:none">
+      <option>Short</option><option>Medium</option><option>Long</option>
+    </select>
+    <select id="competenceSelect" style="display:none">
+      <option>Introductory</option><option>Average</option><option>Advanced</option>
+    </select>
+    <select id="toneSelect" style="display:none">
+      <option>Adult</option><option>Young</option>
+    </select>
+
+    <div id="descriptionBox" class="description-box">Loading description…</div>
+
+    <div class="nav-buttons">
+      <button id="prevBtn" disabled title="Enter a narrative to use navigation">← Previous</button>
+      <button id="nextBtn" disabled title="Enter a narrative to use navigation">Next →</button>
+    </div>
+
+    <p class="keyboard-hint" id="keyboardHint" style="display:none">
+      Use ← → arrow keys to navigate the narrative.
+    </p>
+    <p class="no-narrative-notice" id="noNarrativeNotice" style="display:none">
+      Not in a narrative. <a href="narratives.html">Choose a narrative</a> to enable navigation,
+      or <a href="map.html">browse the map</a>.
+    </p>
+
+  </section>
+</main>
+
+<!-- Timeline CTA -->
+<section class="timeline-cta">
+  <h2>Explore the Timeline</h2>
+  <p>Follow the chronological journey of artworks across Austrian art history - <a href="timeline.html">Open the timeline →</a></p>
+</section>
+
+<footer class="footer">
+  © Virtual Exhibition • Belvedere Museum • Student Project (MMMM) - DHDK, Università di Bologna
+</footer>
+
+<script src="assets/js/item-bilingual.js"></script>
+<script src="assets/js/theme.js"></script>
+
+</body>
+</html>

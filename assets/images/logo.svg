@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 40" aria-hidden="true" focusable="false">
+  <rect width="200" height="40" fill="none"/>
+  <!-- simple decorative mark only; text removed to avoid duplicate site name -->
+  <g transform="translate(6,6)">
+    <circle cx="12" cy="12" r="10" fill="#c6b893" />
+    <rect x="28" y="6" width="6" height="12" rx="2" fill="#c6b893" />
+  </g>
+</svg>

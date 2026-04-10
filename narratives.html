@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Narratives – Belvedere Virtual Exhibition</title>
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link id="theme-style" rel="stylesheet" href="">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <style>
+    /* ---- Narrative cards: richer layout ---- */
+    .narratives-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-top: 36px;
+    }
+
+    .narrative-card {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Artwork thumbnail strip inside each card */
+    .narrative-thumbs {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 18px;
+      overflow: hidden;
+    }
+
+    .narrative-thumbs img {
+      width: 100px;
+      height: 100px;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 6px;
+      flex: 0 0 100px;
+      opacity: 0.9;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+
+    .narrative-thumbs img:hover {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+
+    .narrative-meta {
+      display: flex;
+      gap: 16px;
+      margin: 12px 0 8px;
+      font-size: 0.82rem;
+      opacity: 0.65;
+      letter-spacing: 0.04em;
+    }
+
+    .narrative-meta span {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    /* ---- How-to section ---- */
+    .how-to-section {
+      margin-top: 52px;
+      padding-top: 36px;
+      border-top: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .how-to-section h2 {
+      margin-bottom: 16px;
+    }
+
+    .how-to-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 24px;
+    }
+
+    .how-to-step {
+      padding: 20px;
+      border-radius: 8px;
+      background: rgba(0,0,0,0.03);
+    }
+
+    .how-to-step .step-num {
+      font-size: 1.5rem;
+      font-weight: 700;
+      opacity: 0.25;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .how-to-step p {
+      font-size: 0.92rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    @media (max-width: 800px) {
+      .narratives-grid { grid-template-columns: 1fr; }
+      .how-to-steps { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <button id="nav-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+  <a href="index.html" class="logo">
+    <img class="site-avatar" src="assets/images/logo.svg" alt="Belvedere Museum logo">
+    <span class="sr-only">Belvedere Museum</span>
+  </a>
+  <nav id="main-nav" class="navbar">
+    <a href="index.html">Home</a>
+    <a href="map.html">Exhibition Map</a>
+    <a href="timeline.html">Timeline</a>
+    <a href="narratives.html" class="active">Narratives</a>
+    <a href="about.html">About</a>
+    <a href="documentation.html">Documentation</a>
+    <a href="disclaimer.html">Disclaimer</a>
+  </nav>
+  <button id="theme-toggle">Switch Theme</button>
+</header>
+
+<main class="narratives-container">
+
+  <!-- Hero -->
+  <section class="narratives-hero">
+    <h1>Exhibition Narratives</h1>
+    <p class="narratives-intro">
+      Two curated journeys through Austrian art. Choose a path and let the artworks
+      tell a story - either in the order history unfolded, or through the thread of
+      emotional expression that connects centuries.
+    </p>
+  </section>
+
+  <!-- Narrative Cards -->
+  <section class="narratives-grid">
+
+    <!-- ---- Timeline Narrative ---- -->
+    <div class="narrative-card">
+
+      <!-- Thumbnail strip: first 6 artworks of the timeline narrative -->
+      <div class="narrative-thumbs" aria-hidden="true">
+        <img src="images/messerschmidt-character-head.jpg" alt="">
+        <img src="images/amerling-girl-straw-hat.jpg" alt="">
+        <img src="images/waldmuller-children-grapes.jpg" alt="">
+        <img src="images/blau-spring-prater.jpg" alt="">
+        <img src="images/klimt-kiss.jpg" alt="">
+        <img src="images/schiele-wally.jpg" alt="">
+      </div>
+
+      <div class="narrative-card-text">
+        <h2>Timeline Narrative</h2>
+
+        <div class="narrative-meta">
+          <span>🖼 18 artworks</span>
+          <span>⏱ 60–90 min</span>
+          <span>📅 c. 1770 → c. 1920</span>
+        </div>
+
+        <p>
+          A chronological journey through 150 years of Austrian artistic development.
+          From Messerschmidt's Enlightenment-era Character Heads through Biedermeier
+          domestic intimacy, the atmospheric Stimmungsmalerei of Schindler and Blau,
+          the ornamental gold of Klimt's Secession, and finally the raw expressionist
+          line of Schiele and Kokoschka.
+        </p>
+        <p>
+          <em>Suitable for all audiences. Description mode can be changed freely at any artwork.</em>
+        </p>
+
+        <a class="narrative-btn"
+           href="item.html?id=messerschmidt-character-head&n=timeline">
+          Start Timeline Narrative →
+        </a>
+      </div>
+    </div>
+
+    <!-- ---- Emotion & Expression ---- -->
+    <div class="narrative-card">
+
+      <!-- Thumbnail strip: key artworks in the emotion narrative -->
+      <div class="narrative-thumbs" aria-hidden="true">
+        <img src="images/messerschmidt-character-head.jpg" alt="">
+        <img src="images/romako-tegetthoff.jpg" alt="">
+        <img src="images/klimt-judith-i.jpg" alt="">
+        <img src="images/klimt-kiss.jpg" alt="">
+        <img src="images/kokoschka-alma-mahler.jpg" alt="">
+        <img src="images/schiele-wally.jpg" alt="">
+      </div>
+
+      <div class="narrative-card-text">
+        <h2>Emotion &amp; Expression</h2>
+
+        <div class="narrative-meta">
+          <span>🖼 9 artworks</span>
+          <span>⏱ 30–45 min</span>
+          <span>🎭 Thematic path</span>
+        </div>
+
+        <p>
+          A thematic pathway that cuts across chronology to follow a single thread:
+          the body and face as sites of psychological revelation. From Messerschmidt's
+          grimacing heads to Romako's trembling admiral, Klimt's femme fatale, and
+          Schiele's anguished projections - this narrative explores how Austrian artists
+          made inner states visible.
+        </p>
+        <p>
+          <em>Especially suited to visitors interested in psychology, theatre, or modern subjectivity.</em>
+        </p>
+
+        <a class="narrative-btn"
+           href="item.html?id=messerschmidt-character-head&n=emotion_expression">
+          Start Emotion &amp; Expression →
+        </a>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- How to use -->
+  <section class="how-to-section">
+    <h2>How to Use the Narratives</h2>
+    <p style="font-size:1rem; line-height:1.75; max-width:700px; opacity:0.85;">
+      Once inside a narrative, a progress banner shows your position in the sequence.
+      Use the buttons - or your keyboard arrow keys - to move through the artworks.
+      You can adjust the description mode (length, level, tone) at any point without
+      leaving the narrative. Your position is always saved in the URL so you can
+      bookmark or share any artwork within any narrative.
+    </p>
+
+    <div class="how-to-steps">
+      <div class="how-to-step">
+        <span class="step-num">1</span>
+        <p><strong>Choose a narrative</strong> above and click the Start button to enter at the first artwork.</p>
+      </div>
+      <div class="how-to-step">
+        <span class="step-num">2</span>
+        <p><strong>Navigate with Next / Previous</strong> buttons, or use ← → arrow keys on your keyboard.</p>
+      </div>
+      <div class="how-to-step">
+        <span class="step-num">3</span>
+        <p><strong>Adjust descriptions</strong> at any artwork - Brief, Standard, or Full; Intro, General, or Scholar level.</p>
+      </div>
+    </div>
+
+    <p style="font-size:0.93rem; line-height:1.65; max-width:700px; margin-top:28px; opacity:0.7;">
+      Prefer browsing freely? Visit the <a href="map.html">Exhibition Map</a> to explore
+      by room, or view all artworks in chronological order on the <a href="timeline.html">Timeline</a>.
+    </p>
+  </section>
+
+</main>
+
+<!-- Timeline CTA -->
+<section class="timeline-cta">
+  <h2>Explore the Timeline</h2>
+  <p>Follow the chronological journey of artworks across Austrian art history - <a href="timeline.html">Open the timeline →</a></p>
+</section>
+
+<footer class="footer">
+  © Virtual Exhibition • Belvedere Museum • Student Project (MMMM) - DHDK, Università di Bologna
+</footer>
+
+<script defer src="assets/js/narratives.js"></script>
+<script src="assets/js/theme.js"></script>
+
+</body>
+</html>

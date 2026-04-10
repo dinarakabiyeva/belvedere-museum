@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Documentation – Belvedere Virtual Exhibition</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link id="theme-style" rel="stylesheet" href="">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+</head>
+
+<body>
+
+<header class="site-header">
+  <button id="nav-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+  <a href="index.html" class="logo">
+    <img class="site-avatar" src="assets/images/logo.svg" alt="Belvedere Museum logo">
+    <span class="sr-only">Belvedere Museum</span>
+  </a>
+  <nav id="main-nav" class="navbar">
+    <a href="index.html">Home</a>
+    <a href="map.html">Exhibition Map</a>
+    <a href="timeline.html">Timeline</a>
+    <a href="narratives.html">Narratives</a>
+    <a href="about.html">About</a>
+    <a href="documentation.html">Documentation</a>
+    <a href="disclaimer.html">Disclaimer</a>
+  </nav>
+  <button id="theme-toggle">Switch Theme</button>
+</header>
+
+<main class="documentation-container">
+
+  <h1>Project Documentation</h1>
+  <p><em>Design choices, metadata model, and technical rationale for the Belvedere Virtual Exhibition.</em></p>
+
+  <!-- ======================================
+       SECTION 1: PROJECT OVERVIEW
+       ====================================== -->
+  <h2>1. Project Overview & Goals</h2>
+
+  <p>This website is a MMMM (Multimedia Museum Meta Mirror) project created for the
+  <em>Information Modeling and Web Technologies</em> course at the University of Bologna
+  (A.Y. 2024–25, prof. Fabio Vitali). It serves as a virtual companion application for an
+  imagined exhibition of Austrian art history at the Belvedere Museum, Vienna.</p>
+
+  <p>The exhibition presents <strong>18 real artworks</strong> spanning from the late Baroque
+  (c. 1770) to early Modernism (c. 1920), arranged in six thematic rooms and navigable
+  through two distinct narrative paths. The system is designed to serve three user profiles:</p>
+
+  <div class="doc-example">
+    <span class="doc-example-label">Alice</span>
+    <span>A middle-school teacher planning a 2-hour class trip. She needs quick, engaging
+    descriptions and clear room structure. Served by the <em>Short / Introductory / Young</em>
+    description mode and the Exhibition Map.</span>
+  </div>
+  <div class="doc-example">
+    <span class="doc-example-label">Bruno</span>
+    <span>A busy professional with 45 minutes. He needs efficient, intelligent descriptions
+    without excessive jargon. Served by the <em>Medium / Average / Adult</em> mode and the
+    Timeline narrative for chronological orientation.</span>
+  </div>
+  <div class="doc-example">
+    <span class="doc-example-label">Carla</span>
+    <span>A PhD student evaluating whether a physical visit adds value. She needs scholarly
+    context. Served by the <em>Long / Advanced / Scholar</em> mode and the
+    Emotion &amp; Expression narrative for thematic depth.</span>
+  </div>
+
+  <!-- ======================================
+       SECTION 2: METADATA MODEL
+       ====================================== -->
+  <h2>2. Data Model (items.json)</h2>
+
+  <p>All artwork data is stored in a single <code>items.json</code> file with three top-level
+  keys: <code>rooms</code>, <code>items</code>, and <code>narratives</code>. This flat JSON
+  architecture was chosen deliberately over a relational database to:</p>
+
+  <ul>
+    <li>Enable purely client-side operation without a server backend</li>
+    <li>Allow easy inspection and editing by non-developers</li>
+    <li>Reduce network overhead (single fetch on page load)</li>
+  </ul>
+
+  <h3>2.1 Item Metadata Fields</h3>
+  <p>Each item follows a Dublin Core-inspired schema, extended for museum use:</p>
+
+  <div class="doc-rationale">
+    <strong>Why Dublin Core?</strong> Dublin Core is the most widely adopted metadata standard
+    in digital cultural heritage (used by Europeana, the Getty, and the Belvedere's own online
+    catalogue). Its 15 core elements map cleanly to painting metadata while remaining
+    understandable to non-specialists. We use a simplified subset: <code>title</code>,
+    <code>creator</code>, <code>date</code>, <code>type</code>, <code>format</code>,
+    <code>identifier</code> (inventory number), and a custom <code>room</code> field for
+    spatial placement.
+  </div>
+
+  <h3>2.2 Description Grid</h3>
+  <p>Each artwork carries up to 5 descriptions keyed by a compound string
+  (<code>length_competence_tone</code>) mapping to the grid specified in the project brief:</p>
+
+  <div class="doc-example">
+    <span class="doc-example-label">Length</span>
+    <span><code>short</code> (2–3 lines), <code>medium</code> (10–15 lines), <code>long</code> (scholarly depth)</span>
+  </div>
+  <div class="doc-example">
+    <span class="doc-example-label">Competence</span>
+    <span><code>intro</code> (no prior knowledge), <code>avg</code> (general interest), <code>adv</code> (specialist)</span>
+  </div>
+  <div class="doc-example">
+    <span class="doc-example-label">Tone</span>
+    <span><code>adult</code> (neutral professional), <code>young</code> (accessible, playful)</span>
+  </div>
+
+  <p>A graceful fallback chain in <code>item.js</code> tries the exact key first, then
+  progressively relaxes constraints (e.g., <code>medium_avg_adult</code> → <code>medium_intro_adult</code>
+  → <code>medium</code>), ensuring no description box is ever empty.</p>
+
+  <h3>2.3 Narratives &amp; Links</h3>
+  <p>The <code>narratives</code> key stores three sub-keys: an ordered <code>timeline</code>
+  array, an <code>emotion_expression</code> array, a <code>links</code> map (precomputed
+  prev/next for O(1) navigation), and an <code>index</code> map (which narratives each item
+  appears in). Precomputing links avoids array traversal on every navigation click.</p>
+
+  <!-- ======================================
+       SECTION 3: THEMES
+       ====================================== -->
+  <h2>3. Typographic Themes</h2>
+
+  <p>The project implements two themes, each inspired by a distinct historical aesthetic
+  appropriate to the exhibition's subject matter.</p>
+
+  <h3>3.1 Classic Theme - XIX Century Academic</h3>
+  <p>The Classic theme references the visual culture of 19th-century Viennese museum catalogues
+  and the Biedermeier period (1815–1848). Every choice is grounded in period precedent:</p>
+
+  <div class="doc-rationale">
+    <strong>Background (#f4ede0):</strong> This warm parchment tone matches the paper stock
+    used in Viennese cultural periodicals such as <em>Allgemeine Theaterzeitung</em> (1840s).
+    Pure white would be anachronistic - 19th-century printing could not achieve optical white.
+  </div>
+
+  <div class="doc-rationale">
+    <strong>Fonts - Playfair Display + Lora:</strong> Playfair Display evokes the high-contrast
+    display serifs (Didot, Bodoni) found in exhibition catalogues of the Kunsthistorisches
+    Museum's founding era (1891). Lora provides a readable body serif that references
+    letterpress printing without literal historical simulation.
+  </div>
+
+  <div class="doc-rationale">
+    <strong>Accent colour (#b5892a):</strong> A warm ochre-gold chosen to reference the gilded
+    frames of academic salon paintings of this period. It also functions as the high-contrast
+    signal colour required for accessibility (contrast ratio ≥ 4.5:1 against the background).
+  </div>
+
+  <div class="doc-rationale">
+    <strong>Decorative border:</strong> The repeating ochre-stripe top border references the
+    ornamental printed rules used in Austrian state publications and museum catalogues of the
+    1860s–1890s (Ringstrasse era). It signals cultural authority without being obtrusive.
+  </div>
+
+  <div class="doc-rationale">
+    <strong>Image framing (padding + box-shadow offset):</strong> Images in the item view are
+    wrapped with a 12px padding and a flat shadow offset, mimicking the look of a mounted
+    print on a museum mat board. This is grounded in the display conventions of the period
+    and creates clear visual hierarchy between image and text.
+  </div>
+
+  <h3>3.2 Modern Theme - Vienna Secession / Jugendstil 1900</h3>
+  <p>The Modern theme is inspired by the Vienna Secession (founded 1897), specifically the
+  graphic language of <em>Ver Sacrum</em> magazine (1898–1903) and Koloman Moser's
+  ornamental work:</p>
+
+  <div class="doc-rationale">
+    <strong>Dark background (#0e0e0e):</strong> The near-black references the Secession
+    building's dark zinc roof and the chiaroscuro of Klimt's gold-ground paintings.
+    Dark backgrounds also mirror the low-lit atmosphere of the Secession's original exhibition
+    rooms, designed to focus attention on the luminosity of the works.
+  </div>
+
+  <div class="doc-rationale">
+    <strong>Gold accent (#d4a843):</strong> Klimt's literal use of gold leaf in <em>The Kiss</em>
+    (1907–08) and <em>Judith I</em> (1901) makes gold the definitive Secession colour.
+    The specific value matches the warm yellow-gold (as opposed to cool platinum) of gold leaf
+    applied over dark grounds.
+  </div>
+
+  <div class="doc-rationale">
+    <strong>Fonts - Cormorant Garamond + Inter:</strong> Cormorant's extreme contrast ratio
+    (thin hairlines vs. thick strokes) echoes the Otto Wagner lettering characteristic of
+    Jugendstil architecture. Inter for navigation UI is a deliberate anachronism signalling
+    that the digital interface does not pretend to be a period artefact.
+  </div>
+
+  <div class="doc-rationale">
+    <strong>Geometric border pattern:</strong> The repeating gold dash–gap pattern at the
+    document top references Koloman Moser's geometric surface ornament designs for
+    <em>Ver Sacrum</em> covers (1898). It establishes visual rhythm without figurative
+    decoration.
+  </div>
+
+  <div class="doc-rationale">
+    <strong>Typography scale - uppercase small caps for labels:</strong> The Secession and its
+    contemporaries (e.g., Deutsche Werkstätten) used structured uppercase lettering for
+    museum labels. The 0.15em letter-spacing on category labels is calibrated to produce
+    the spaced-out look of lithographic uppercase display type of the period.
+  </div>
+
+  <!-- ======================================
+       SECTION 4: INTERACTIVE FEATURES
+       ====================================== -->
+  <h2>4. Interactive Features</h2>
+
+  <h3>4.1 Theme Switching</h3>
+  <p>Theme switching is handled by dynamically replacing a <code>&lt;link&gt;</code> element
+  (id: <code>theme-style</code>) via <code>theme.js</code>. The chosen theme is persisted
+  in <code>localStorage</code> so it survives navigation between pages. A body class
+  (<code>light</code> / <code>dark</code>) is applied in parallel for CSS variable
+  inheritance in timeline.css.</p>
+
+  <div class="doc-rationale">
+    <strong>Why a separate CSS file per theme rather than CSS custom properties + a class toggle?</strong>
+    Separate files allow complete typographic overrides (font-family, line-height, font-size)
+    that cannot be expressed through CSS custom properties alone. This approach also
+    makes each theme's code independently legible and maintainable.
+  </div>
+
+  <h3>4.2 Exhibition Map</h3>
+  <p>The map uses a CSS grid to represent room adjacency in a schematic floor-plan layout.
+  Clicking a room triggers <code>showRoom()</code> in <code>map.js</code>, which fetches
+  items from the JSON and populates a slide-in panel. The panel uses CSS transitions
+  (opacity + translateY) rather than JavaScript animation for performance and accessibility.</p>
+
+  <h3>4.3 Artwork Description Controls</h3>
+  <p>Three dropdowns (Length, Competence, Tone) map to the three axes of the description grid.
+  Changes trigger <code>loadDescription()</code> which applies the fallback chain described
+  in §2.2. All dropdowns are standard <code>&lt;select&gt;</code> elements (no custom
+  components) to preserve native keyboard and screen-reader accessibility.</p>
+
+  <h3>4.4 Narrative Navigation</h3>
+  <p>Each narrative defines a complete ordered list of artwork IDs. Navigation between
+  artworks is implemented by passing <code>?id=X&amp;n=narrativeName</code> query parameters
+  in the URL - enabling bookmarking and direct linking to any artwork within any narrative.</p>
+
+  <h3>4.5 Timeline (timeline.js)</h3>
+  <p>The timeline reads the <code>narratives.timeline</code> array for its ordered sequence.
+  An <code>IntersectionObserver</code> triggers a CSS reveal animation (<code>.hidden</code>
+  → <code>.in-view</code>) as items scroll into view, replacing a JavaScript-heavy approach
+  with a pure CSS transition. This reduces repaints significantly on long timelines.</p>
+
+  <!-- ======================================
+       SECTION 5: RESPONSIVE DESIGN
+       ====================================== -->
+  <h2>5. Responsive Design</h2>
+
+  <p>The layout uses three breakpoints: 1100px (wide), 900px (medium, collapses item
+  grid to single column), and 800px (mobile, hamburger navigation, single-column grids).
+  The artwork marquee on the homepage uses a CSS <code>animation: marquee-scroll</code>
+  with <code>will-change: transform</code> for GPU-composited scrolling, avoiding layout
+  thrashing on mobile.</p>
+
+  <!-- ======================================
+       SECTION 6: ACCESSIBILITY
+       ====================================== -->
+  <h2>6. Accessibility</h2>
+
+  <ul>
+    <li>All navigation uses semantic <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>,
+    <code>&lt;header&gt;</code>, and <code>&lt;footer&gt;</code> landmarks.</li>
+    <li>Images carry descriptive <code>alt</code> text populated from item titles.</li>
+    <li>The mobile nav toggle uses <code>aria-expanded</code> and <code>aria-controls</code>
+    attributes.</li>
+    <li>The room panel uses <code>aria-hidden</code> toggling.</li>
+    <li>Colour contrast in both themes meets WCAG AA (4.5:1 for body text).</li>
+    <li>All interactive elements are keyboard-navigable.</li>
+  </ul>
+
+  <!-- ======================================
+       SECTION 7: CREDITS
+       ====================================== -->
+  <h2>7. Credits &amp; Sources</h2>
+
+  <p>All artworks reproduced are in the public domain or are items from the Belvedere
+  Museum's open-access image collection. Descriptive texts were written for educational
+  purposes as part of this coursework. See the <a href="disclaimer.html">Disclaimer</a>
+  page for full copyright information.</p>
+
+</main>
+
+<!-- Timeline CTA -->
+<section class="timeline-cta">
+  <h2>Explore the Timeline</h2>
+  <p>Follow the chronological journey of artworks across Austrian art history - <a href="timeline.html">Open the timeline →</a></p>
+</section>
+
+<script src="assets/js/theme.js"></script>
+
+</body>
+</html>

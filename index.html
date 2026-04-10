@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Belvedere Museum – Virtual Exhibition</title>
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link id="theme-style" rel="stylesheet" href="">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <style>
+    /* ---- Hero ---- */
+    .hero { position: relative; overflow: visible; }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 58%;
+      transform: translate(-50%, -50%);
+      width: min(1100px, 88vw);
+      height: min(520px, 38vw);
+      background-image: url('images/klimt-kiss.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 0.18;
+      filter: blur(3px) saturate(1.1);
+      border-radius: 16px;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero-text { position: relative; z-index: 2; }
+
+    .hero-buttons {
+      position: relative;
+      z-index: 3;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-ghost {
+      display: inline-block;
+      padding: 0.65rem 1rem;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.85);
+      border: 1px solid rgba(0,0,0,0.08);
+      color: inherit;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+      backdrop-filter: blur(2px);
+      font-size: 0.95rem;
+    }
+
+    .btn-ghost:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+    }
+
+    body.dark .btn-ghost {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.14);
+      color: #f4eedf;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    }
+
+    body.dark .btn-ghost:hover {
+      background: rgba(212,168,67,0.12);
+      box-shadow: 0 12px 26px rgba(0,0,0,0.56);
+    }
+
+    body.dark .quick-link-card {
+      background: rgba(18,18,18,0.92);
+      border-color: rgba(255,255,255,0.12);
+      color: #f6f1e8;
+      box-shadow: 0 18px 35px rgba(0,0,0,0.55);
+    }
+
+    body.dark .quick-link-card:hover {
+      box-shadow: 0 22px 42px rgba(0,0,0,0.65);
+    }
+
+    body.dark .quick-link-card .ql-icon {
+      color: #d4a843;
+    }
+
+    @media (max-width:700px){
+      .hero::before { opacity: 0.14; }
+      .hero-buttons { gap: 0.6rem; }
+    }
+
+    /* ---- Marquee ---- */
+    .art-marquee { overflow: hidden; padding: 3.5rem 0; background: transparent; }
+
+    .marquee-track {
+      display: flex;
+      gap: 2.5rem;
+      align-items: center;
+      animation: marquee-scroll 36s linear infinite;
+      will-change: transform;
+      padding-left: 2rem;
+    }
+
+    .marquee-track img {
+      width: 220px;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 6px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+      flex: 0 0 auto;
+    }
+
+    @keyframes marquee-scroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .art-marquee:hover .marquee-track { animation-play-state: paused; }
+
+    @media (max-width:1200px){
+      .marquee-track { animation-duration: 30s; }
+      .marquee-track img { width: 180px; height: 260px; }
+    }
+    @media (max-width:700px){
+      .marquee-track { animation-duration: 22s; gap:1.2rem; }
+      .marquee-track img { width: 140px; height:200px; }
+    }
+
+    /* ---- Exhibition intro strip ---- */
+    .exhibition-intro {
+      max-width: 820px;
+      margin: 0 auto 60px;
+      padding: 0 24px;
+      text-align: center;
+    }
+
+    .exhibition-intro h2 {
+      font-size: 1.65rem;
+      margin-bottom: 12px;
+    }
+
+    .exhibition-intro p {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      opacity: 0.85;
+    }
+
+    .exhibition-intro .quick-links {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .quick-link-card {
+      flex: 0 0 auto;
+      padding: 14px 22px;
+      border: 1px solid rgba(0,0,0,0.1);
+      border-radius: 8px;
+      text-decoration: none;
+      color: inherit;
+      font-size: 0.94rem;
+      font-weight: 600;
+      transition: transform 0.18s, box-shadow 0.18s;
+      background: rgba(255,255,255,0.5);
+    }
+
+    .quick-link-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.07);
+    }
+
+    .quick-link-card .ql-icon { font-size: 1.3rem; display: block; margin-bottom: 4px; }
+  </style>
+</head>
+
+<body>
+
+<!-- ================= HEADER / NAVBAR ================= -->
+<header class="site-header">
+  <button id="nav-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+  <a href="index.html" class="logo">
+    <img class="site-avatar" src="assets/images/logo.svg" alt="Belvedere Museum logo">
+    <span class="sr-only">Belvedere Museum</span>
+  </a>
+  <nav id="main-nav" class="navbar">
+    <a href="index.html">Home</a>
+    <a href="map.html">Exhibition Map</a>
+    <a href="timeline.html">Timeline</a>
+    <a href="narratives.html">Narratives</a>
+    <a href="about.html">About</a>
+    <a href="documentation.html">Documentation</a>
+    <a href="disclaimer.html">Disclaimer</a>
+  </nav>
+  <button id="theme-toggle">Switch Theme</button>
+</header>
+
+<!-- ================= HERO SECTION ================= -->
+<section class="hero">
+  <div class="hero-text">
+
+    <h1>Belvedere Museum<br>Virtual Exhibition</h1>
+
+    <p class="hero-subtitle">
+      150 years of Austrian art - from Enlightenment sculpture to Viennese Modernism.
+      Explore through <strong>interactive timelines</strong>,
+      <strong>thematic narratives</strong>, and <strong>room-by-room discovery</strong>.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="map.html" class="btn-primary">Enter the Exhibition</a>
+      <a href="narratives.html" class="btn-secondary">Explore Narratives</a>
+      <a href="about.html" class="btn-ghost">Learn More</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= ARTWORK MARQUEE ================= -->
+<section class="art-marquee" aria-label="Featured artworks">
+  <div class="marquee-track">
+    <img src="images/klimt-kiss.jpg" alt="The Kiss – Klimt">
+    <img src="images/schiele-wally.jpg" alt="Portrait of Wally – Schiele">
+    <img src="images/monet-iris-garden.jpg" alt="Iris Garden – Monet">
+    <img src="images/kokoschka-alma-mahler.jpg" alt="Alma Mahler – Kokoschka">
+    <img src="images/segantini-evil-mothers.jpg" alt="The Evil Mothers – Segantini">
+    <img src="images/blau-spring-prater.jpg" alt="Spring at the Prater – Tina Blau">
+    <img src="images/romako-tegetthoff.jpg" alt="Admiral Tegetthoff – Romako">
+    <!-- duplicate for seamless loop -->
+    <img src="images/klimt-kiss.jpg" alt="The Kiss – Klimt">
+    <img src="images/schiele-wally.jpg" alt="Portrait of Wally – Schiele">
+    <img src="images/monet-iris-garden.jpg" alt="Iris Garden – Monet">
+    <img src="images/kokoschka-alma-mahler.jpg" alt="Alma Mahler – Kokoschka">
+    <img src="images/segantini-evil-mothers.jpg" alt="The Evil Mothers – Segantini">
+    <img src="images/blau-spring-prater.jpg" alt="Spring at the Prater – Tina Blau">
+    <img src="images/romako-tegetthoff.jpg" alt="Admiral Tegetthoff – Romako">
+  </div>
+</section>
+
+<!-- ================= EXHIBITION INTRO ================= -->
+<section class="exhibition-intro">
+  <h2>About This Exhibition</h2>
+  <p>
+    This virtual exhibition presents 18 masterworks from the Belvedere Museum's collection,
+    arranged across six thematic rooms and two curated narrative paths. Each artwork includes
+    descriptions tailored to different audiences - from quick introductions to in-depth
+    scholarly analysis. Switch visual themes at any time using the button in the header.
+  </p>
+
+  <div class="quick-links">
+    <a href="map.html" class="quick-link-card">
+      <span class="ql-icon">🗺</span>Exhibition Map
+    </a>
+    <a href="narratives.html" class="quick-link-card">
+      <span class="ql-icon">📖</span>Narratives
+    </a>
+    <a href="timeline.html" class="quick-link-card">
+      <span class="ql-icon">⏳</span>Timeline
+    </a>
+    <a href="documentation.html" class="quick-link-card">
+      <span class="ql-icon">📋</span>Documentation
+    </a>
+  </div>
+</section>
+
+<!-- ================= TIMELINE CTA ================= -->
+<section class="timeline-cta">
+  <h2>Explore the Timeline</h2>
+  <p>Follow the chronological journey of artworks across Austrian art history - <a href="timeline.html">Open the timeline →</a></p>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  © Virtual Exhibition • Belvedere Museum • Student Project (MMMM) - DHDK, Università di Bologna
+</footer>
+
+<script src="assets/js/theme.js"></script>
+
+</body>
+</html>
