@@ -6,13 +6,13 @@
 
 let itemsData_map = null;
 
-fetch('data/items.json')
+fetch('data/items-bilingual.json')
   .then(r => r.json())
   .then(data => {
     itemsData_map = data;
     attachRoomHandlers();
   })
-  .catch(err => console.error('Failed to load items.json', err));
+  .catch(err => console.error('Failed to load items-bilingual.json', err));
 
 
 function attachRoomHandlers() {
