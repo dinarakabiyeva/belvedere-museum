@@ -4,7 +4,7 @@
    correct first item of the narrative sequence from items.json.
    ============================================================ */
 
-fetch('data/items.json')
+fetch('data/items-bilingual.json')
   .then(r => r.json())
   .then(data => renderNarratives(data))
   .catch(err => console.error('Failed to load narratives data:', err));

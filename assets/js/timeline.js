@@ -1,4 +1,4 @@
-fetch("data/items.json")
+fetch("data/items-bilingual.json")
     .then(res => res.json())
     .then(data => buildTimeline(data));
 

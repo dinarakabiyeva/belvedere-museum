@@ -363,11 +363,11 @@
   let activeRoom = null;
 
   /* ---- Load JSON ---- */
-  fetch('data/items.json')
+  fetch('data/items-bilingual.json')
     .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then(data => { itemsData = data; init(); })
     .catch(err => {
-      console.error('Map: cannot load data/items.json -', err);
+      console.error('Map: cannot load data/items-bilingual.json -', err);
       document.getElementById('pathNotice').style.display = 'block';
       init(); // attach handlers anyway
     });
