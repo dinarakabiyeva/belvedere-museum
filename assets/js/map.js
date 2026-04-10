@@ -77,11 +77,13 @@ function showRoom(num) {
       if (!art) return;
 
       // Pick best short description
-      const desc = art.descriptions
-        ? (art.descriptions.short_intro_adult
-            || art.descriptions.short_intro_young
-            || art.descriptions.medium_avg_adult
-            || Object.values(art.descriptions)[0])
+      const localizedDescriptions = getDescriptionStore(art.descriptions);
+      const desc = localizedDescriptions
+        ? (localizedDescriptions.short_intro_adult
+            || localizedDescriptions.short_intro_young
+            || localizedDescriptions.medium_avg_adult
+            || Object.values(localizedDescriptions).find(value => typeof value === 'string')
+            || '')
         : '';
       const excerpt = desc
         ? (desc.length > 120 ? desc.slice(0, 117) + '…' : desc)
@@ -140,4 +142,13 @@ function escHtml(s) {
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#039;');
+}
+
+function getDescriptionStore(descriptions) {
+  if (!descriptions || typeof descriptions !== 'object') return null;
+  if (typeof descriptions.short_intro_adult === 'string') return descriptions;
+
+  const htmlLang = (document.documentElement.lang || '').toLowerCase();
+  if (htmlLang.startsWith('it') && descriptions.it) return descriptions.it;
+  return descriptions.en  || descriptions.it  || null;
 }

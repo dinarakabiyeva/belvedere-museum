@@ -421,10 +421,12 @@
         const art = itemsData.items?.[id];
         if (!art) return;
 
-        const raw = art.descriptions
-          ? (art.descriptions.short_intro_adult
-              || art.descriptions.medium_avg_adult
-              || Object.values(art.descriptions)[0])
+        const localizedDescriptions = getDescriptionStore(art.descriptions);
+        const raw = localizedDescriptions
+          ? (localizedDescriptions.short_intro_adult
+              || localizedDescriptions.medium_avg_adult
+              || Object.values(localizedDescriptions).find(value => typeof value === 'string')
+              || '')
           : '';
         const excerpt = raw ? (raw.length > 95 ? raw.slice(0, 92) + '…' : raw) : '';
 
@@ -484,7 +486,14 @@
       .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
   }
   function enc(s) { return encodeURIComponent(s); }
+function getDescriptionStore(descriptions) {
+    if (!descriptions || typeof descriptions !== 'object') return null;
+    if (typeof descriptions.short_intro_adult === 'string') return descriptions;
 
+    const htmlLang = (document.documentElement.lang || '').toLowerCase();
+    if (htmlLang.startsWith('it') && descriptions.it) return descriptions.it;
+    return descriptions.en  || descriptions.it  || null;
+  }
 })();
 </script>
 
